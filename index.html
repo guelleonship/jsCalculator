@@ -16,7 +16,7 @@
             <form>
 
                 <div class="display">
-                    <input type="text" name="display" placeholder="0">
+                    <input type="text" name="display" placeholder="0" oninput="limitInputLength(this, 8)">
                 </div>
 
                 <div>
@@ -61,6 +61,15 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function limitInputLength(input, maxLength) {
+            if (input.value.length > maxLength) {
+                input.value = input.value.slice(0, maxLength);
+            }
+        }
+
+    </script>
 </body>
 
 </html>
